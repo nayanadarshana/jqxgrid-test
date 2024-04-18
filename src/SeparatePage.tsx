@@ -1,6 +1,4 @@
 import * as React from "react";
-
-// import * as jqx from "jqwidgets-framework/jqwidgets";
 import * as jqx from "../node_modules/jqwidgets-scripts/jqwidgets-react-tsx/jqxgrid";
 import JqxGrid, {
   IGridSource,
@@ -32,14 +30,20 @@ const SeparatePage = () => {
       datafield: "name",
       width: "50%",
       // Enable editing for the "Name" field
-      columntype: "checkbox", // Set the columntype to "textbox" for text input
+      columntype: "textbox", // Set the columntype to "textbox" for text input
     },
     // Add other columns as needed
   ];
 
   return (
     <div>
-      <JqxGrid source={source} columns={columns} width={600} height={400} />
+      <JqxGrid
+        source={source}
+        columns={columns}
+        width={600}
+        height={400}
+        editable={true}
+      />
     </div>
   );
 };
